@@ -6,7 +6,7 @@ import {
 
 const initialState = [];
 
-export const allCurrencyReducer = (state = initialState, action) => {
+const allCurrencyReducer = (state = initialState, action) => {
   switch (action.type) {
     case POPULATE_CURRENCY:
       return action.rates;
@@ -14,3 +14,5 @@ export const allCurrencyReducer = (state = initialState, action) => {
       return state;
   }
 };
+
+export default allCurrencyReducer;

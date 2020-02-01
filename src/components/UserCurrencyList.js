@@ -1,6 +1,5 @@
-import React, { useContext } from "react";
+import React from "react";
 import CurrencyNodes from "./CurrencyNodes";
-import { CurrencyContext } from "../context/CurrencyContext";
 
 const UserCurrencyList = () => {
   const { userCurrencies } = useContext(CurrencyContext);

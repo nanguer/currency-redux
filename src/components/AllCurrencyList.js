@@ -8,6 +8,10 @@ export const ConnectedAllCurrencyList = ({ currencies, checkIfCurrencies }) => {
     checkIfCurrencies();
   }, []);
 
+  useEffect(() => {
+    localStorage.setItem("currencyList", JSON.stringify(currencies));
+  }, [currencies]);
+
   return (
     <div>
       <h1>Available Currencies</h1>
@@ -19,7 +23,7 @@ export const ConnectedAllCurrencyList = ({ currencies, checkIfCurrencies }) => {
 };
 
 const mapStateToProps = state => ({
-  currencies: state
+  currencies: state.currencies
 });
 
 export default connect(mapStateToProps, { checkIfCurrencies })(
