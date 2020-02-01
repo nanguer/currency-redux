@@ -12,10 +12,10 @@ export const ConnectedCurrency = ({
   const handleSelect = currency => {
     if (!selected) {
       addToUser(currency);
-      //   dispatchAll(remove(currency));
+      remove(currency);
     } else {
-      //   dispatchUser(remove(currency));
-      //   dispatchAll(add(currency));
+      add(currency);
+      removeFromUser(currency);
     }
   };
 

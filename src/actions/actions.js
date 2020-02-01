@@ -9,12 +9,12 @@ import {
   REMOVE_USER_CURRENCY
 } from "./types";
 
-export const add = rates => ({ type: ADD_CURRENCY, rates });
-export const remove = rates => ({ type: REMOVE_CURRENCY, rates });
+export const add = rate => ({ type: ADD_CURRENCY, rate });
+export const remove = rate => ({ type: REMOVE_CURRENCY, rate });
 export const populate = rates => ({ type: POPULATE_CURRENCY, rates });
 export const deleteAll = () => ({});
-export const addToUser = currency => ({ type: ADD_USER_CURRENCY, currency });
-export const removeFromUser = rates => ({ type: REMOVE_USER_CURRENCY, rates });
+export const addToUser = rate => ({ type: ADD_USER_CURRENCY, rate });
+export const removeFromUser = rate => ({ type: REMOVE_USER_CURRENCY, rate });
 
 const url = "http://api.nbp.pl/api/exchangerates/tables/a?format=json";
 

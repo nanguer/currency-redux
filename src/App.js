@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { hot } from "react-hot-loader";
 import AllCurrencyListLoader from "./components/loaders/AllCurrencyLoader";
-//import UserCurrencyList from "../components/UserCurrencyList";
+import UserCurrencyList from "./components/UserCurrencyList";
 import "./styles/styles.scss";
 
 const App = () => {
@@ -33,7 +33,9 @@ const App = () => {
           </button>
           {showList ? <AllCurrencyListLoader /> : null}
         </div>
-        <div>{/* <UserCurrencyList /> */}</div>
+        <div style={{ textAlign: "end", marginLeft: "5rem" }}>
+          <UserCurrencyList />
+        </div>
       </div>
     </div>
   );
