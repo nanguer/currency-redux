@@ -1,7 +1,8 @@
 import {
   ADD_CURRENCY,
   POPULATE_CURRENCY,
-  REMOVE_CURRENCY
+  REMOVE_CURRENCY,
+  REMOVE_CURRENCY_ALL
 } from "../actions/types";
 
 const initialState = [];

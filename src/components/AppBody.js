@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import AllCurrencyListLoader from "../components/loaders/AllCurrencyLoader";
-import UserCurrencyList from "../components/UserCurrencyList";
+import UserCurrencyList from "./UserCurrencyList";
 
 const AppBody = () => {
   const [showList, setShowList] = useState(false);
@@ -31,7 +31,7 @@ const AppBody = () => {
           </button>
           {showList ? <AllCurrencyListLoader /> : null}
         </div>
-        <div>
+        <div className="user-list">
           <UserCurrencyList />
         </div>
       </div>

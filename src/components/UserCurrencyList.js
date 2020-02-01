@@ -1,8 +1,9 @@
 import React from "react";
 import CurrencyNodes from "./CurrencyNodes";
+import { connect } from "react-redux";
 
-const UserCurrencyList = () => {
-  const { userCurrencies } = useContext(CurrencyContext);
+const ConnectedUserCurrencyList = ({ userCurrencies }) => {
+  console.log(userCurrencies);
   const userList = (
     <>
       <h1>Following currencies:</h1>
@@ -11,11 +12,11 @@ const UserCurrencyList = () => {
       </ul>
     </>
   );
-  return (
-    <div style={{ textAlign: "end" }}>
-      {userCurrencies.length > 0 && userList}
-    </div>
-  );
+  return <div style={{ textAlign: "end" }}>{userList}</div>;
 };
 
-export default UserCurrencyList;
+const mapStateToProps = state => ({
+  userCurrencies: state.userCurrencies
+});
+
+export default connect()(ConnectedUserCurrencyList);
