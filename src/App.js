@@ -33,7 +33,14 @@ const App = () => {
           </button>
           {showList ? <AllCurrencyListLoader /> : null}
         </div>
-        <div style={{ textAlign: "end", marginLeft: "5rem" }}>
+        <div
+          style={{
+            textAlign: "end",
+            marginLeft: "5rem",
+            position: "relative",
+            left: "5rem"
+          }}
+        >
           <UserCurrencyList />
         </div>
       </div>

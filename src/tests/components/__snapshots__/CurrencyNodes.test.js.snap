@@ -1,0 +1,44 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Should render CurrencyNodes with currency 1`] = `
+<Fragment>
+  <Connect(ConnectedCurrency)
+    currency={
+      Object {
+        "code": "CZK",
+        "currency": "korona czeska",
+        "mid": 0.1698,
+      }
+    }
+    key="0"
+  />
+  <Connect(ConnectedCurrency)
+    currency={
+      Object {
+        "code": "DKK",
+        "currency": "korona duńska",
+        "mid": 0.5729,
+      }
+    }
+    key="1"
+  />
+  <Connect(ConnectedCurrency)
+    currency={
+      Object {
+        "code": "ISK",
+        "currency": "korona islandzka",
+        "mid": 0.031457,
+      }
+    }
+    key="2"
+  />
+</Fragment>
+`;
+
+exports[`Should render CurrencyNodes with no currencies message 1`] = `
+<Fragment>
+  <p>
+    No currencies...
+  </p>
+</Fragment>
+`;
