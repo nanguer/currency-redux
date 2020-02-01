@@ -1,21 +1,27 @@
-import React, { useEffect} from "react";
-import{connect} from 'react-redux';
-import CurrencyNodesLoader from "../components/loaders/CurrencyNodesLoader";
-import { fetchCurrencies } from "../actions/actions";
+import React, { useEffect } from "react";
+import { connect } from "react-redux";
+import CurrencyNodes from "../components/CurrencyNodes";
+import { checkIfCurrencies } from "../actions/actions";
 
-export const ConnectedAllCurrencyList = ({dispatch}) => {
+export const ConnectedAllCurrencyList = ({ currencies, checkIfCurrencies }) => {
   useEffect(() => {
-    dispatch(fetchCurrencies());
+    checkIfCurrencies();
   }, []);
 
   return (
     <div>
       <h1>Available Currencies</h1>
       <ul>
-        <CurrencyNodesLoader />
+        <CurrencyNodes currencies={currencies} />
       </ul>
     </div>
   );
 };
 
-export default connect()(ConnectedAllCurrencyList);
+const mapStateToProps = state => ({
+  currencies: state
+});
+
+export default connect(mapStateToProps, { checkIfCurrencies })(
+  ConnectedAllCurrencyList
+);

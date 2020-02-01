@@ -1,33 +1,31 @@
 import React from "react";
-
 import { add, remove } from "../actions/actions";
+import { connect } from "react-redux";
 
-// const Currency = ({ rate }) => {
-//   const { dispatchAll, dispatchUser } = useContext(CurrencyContext);
+export const ConnectedCurrency = ({ currency, add, remove }) => {
+  const handleSelect = currency => {
+    if (!selected) {
+      //   add(currency));
+      //   dispatchAll(remove(currency));
+    } else {
+      //   dispatchUser(remove(currency));
+      //   dispatchAll(add(currency));
+    }
+  };
 
-//   const handleSelect = rate => {
-//     if (!selected) {
-//       dispatchUser(add(rate));
-//       dispatchAll(remove(rate));
-//     } else {
-//       dispatchUser(remove(rate));
-//       dispatchAll(add(rate));
-//     }
-//   };
+  const { name, code, mid, selected } = currency;
+  return (
+    <li>
+      <div>Currency: {name}</div>
+      <div>Code: {code}</div>
+      <div>Mid: {mid}</div>
+      <div>
+        <button onClick={() => handleSelect(currency)}>
+          {selected ? "Remove" : "Add"}
+        </button>
+      </div>
+    </li>
+  );
+};
 
-//   const { currency, code, mid, selected } = rate;
-//   return (
-//     <li>
-//       <div>Currency: {currency}</div>
-//       <div>Code: {code}</div>
-//       <div>Mid: {mid}</div>
-//       <div>
-//         <button onClick={() => handleSelect(rate)}>
-//           {selected ? "Remove" : "Add"}
-//         </button>
-//       </div>
-//     </li>
-//   );
-// };
-
-// export default Currency;
+export default connect(null, { add, remove })(ConnectedCurrency);

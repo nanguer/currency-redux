@@ -1,10 +1,8 @@
 import React, { Suspense } from "react";
-import {connect} from 'react-redux';
 
 const AllCurrencyList = React.lazy(() => import("../AllCurrencyList"));
 
-export const ConnectedAllCurrencyListLoader = (props) => {
-  console.log(props);
+export const AllCurrencyListLoader = () => {
   return (
     <div style={{ textAlign: "start" }}>
       <Suspense fallback={<div>Loading...</div>}>
@@ -14,4 +12,4 @@ export const ConnectedAllCurrencyListLoader = (props) => {
   );
 };
 
-export default connect()(ConnectedAllCurrencyListLoader);
+export default AllCurrencyListLoader;
