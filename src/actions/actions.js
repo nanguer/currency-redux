@@ -3,7 +3,6 @@ import {
   ADD_CURRENCY,
   REMOVE_CURRENCY,
   POPULATE_CURRENCY,
-  REMOVE_CURRENCY_ALL,
   REMOVE_USER_ALL,
   ADD_USER_CURRENCY,
   REMOVE_USER_CURRENCY
@@ -12,7 +11,7 @@ import {
 export const add = rate => ({ type: ADD_CURRENCY, rate });
 export const remove = rate => ({ type: REMOVE_CURRENCY, rate });
 export const populate = rates => ({ type: POPULATE_CURRENCY, rates });
-export const deleteAll = () => ({});
+export const deleteAll = () => ({ type: REMOVE_USER_ALL });
 export const addToUser = rate => ({ type: ADD_USER_CURRENCY, rate });
 export const removeFromUser = rate => ({ type: REMOVE_USER_CURRENCY, rate });
 

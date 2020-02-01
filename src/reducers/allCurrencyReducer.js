@@ -1,8 +1,7 @@
 import {
   ADD_CURRENCY,
   POPULATE_CURRENCY,
-  REMOVE_CURRENCY,
-  REMOVE_CURRENCY_ALL
+  REMOVE_CURRENCY
 } from "../actions/types";
 
 const initialState = [];
@@ -18,8 +17,7 @@ const allCurrencyReducer = (state = initialState, action) => {
       return filteredCurrencies;
     case ADD_CURRENCY:
       return [...state, { ...action.rate, selected: false }];
-    case REMOVE_CURRENCY_ALL:
-      return [];
+
     default:
       return state;
   }
